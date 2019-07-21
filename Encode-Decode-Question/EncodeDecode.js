@@ -1,5 +1,5 @@
-const encode = (s) => s.replace(/(\w)\1\1+/g, (_) => _.length + _[0]);
-const decode = (s) => s.replace(/(\d)+(\w)/g, (match, one, two) => two.repeat(parseInt(one)));
+const encode = (s) => s.replace(/(\D)\1\1+/g, (_) => _.length + _[0]);
+const decode = (s) => s.replace(/(\d)+(\D)/g, (match, one, two) => two.repeat(parseInt(one)));
 
 const encodeString = "abbbabaavvv"
 const encodedString = encode(encodeString)
